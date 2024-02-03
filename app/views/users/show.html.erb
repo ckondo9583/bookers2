@@ -3,7 +3,10 @@
 
 <!-- ユーザーの詳細 -->
 <div>
+  <%= image_tag @user.get_profile_image(100,100) %>
   <h3><%= @user.name %></h3>
+  <h3><%= @user.introduction %></h3>
+  <p><%= link_to "プロフィール編集", edit_user_path(@user)%></p>
 </div>
 
 <!-- 投稿機能 -->
@@ -20,7 +23,8 @@
 
 <% @books.each do |book| %>
 <div>
-  <p>Title: <%= book.title %></p>
+  <p><%= image_tag 'no_image.jpg' %></p>
+  <p>Title: <%= link_to book.title,book %></p>
   <p>Body: <%= book.body %></p>
   <p>ユーザーネーム：<%= book.user.name %></p>
 </div>
