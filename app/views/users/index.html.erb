@@ -1,15 +1,13 @@
-<!--Bootstrap-->
-<div class="container"> 
-  <div class="row"> 
-  
+
+
 <!--共通部分-->
 <%= render 'books/info', book: @book %>
 
 <!--ユーザー一覧-->
-<div class="col-md-1" style="background-color: pink;">
+<div class="col-md-1">
 </div>
-<div class="col-md-8" style="background-color: orange;">
-<h1>Uses</h1>
+<div class="col-md-8">
+<h2>Uses</h2>
 <% @users.each do |user| %>
 <div>
   <%= image_tag user.get_profile_image(100,100) %>

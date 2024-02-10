@@ -22,16 +22,18 @@
 
 header {
   display: block;
+  width: 100%;
 }
 
-
+main {
+  margin-top: 10px;
+}
 
 li {
   display: flex;
   align-items: center;
   height: 40px;
 }
-
 
 
 .svg {
@@ -44,4 +46,96 @@ li {
   width: 100%;
   display: inline-flex;
   padding: 8px 0px;
+}
+
+.formgroup {
+  margin: 0 0 16px;
+  width: 100%;
+}
+
+
+
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn {
+  font-weight: 400;
+  border: 1px solid;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.createbtn {
+  box-shadow: none !important; 
+  display: inline-block;
+  padding: 6px 12px;
+  color: #FFF;
+  background-color: #28a745;
+  border-color:#28a745!important; ;
+  border-radius: 3px;
+  border: 2px solid #28a745; 
+}
+
+.text_area {
+  width: 100%;
+}
+.text_field {
+  width: 100%;
+}
+
+.editbtn {
+  display: inline-block;
+  padding: 4px 8px;
+  color: #FFF;
+  text-align: center;
+  background-color: #28a745;
+  border-color:#28a745;
+  border-radius: 3px;
+}
+
+.destroybtn {
+  display: inline-block;
+  padding: 4px 8px;
+  color: #FFF;
+  text-align: center;
+  background-color: #dc3545;
+  border-color:#dc3545;
+  border-radius: 3px;
+}
+
+.signupbtn {
+  display: inline-block;
+  padding: 4px 8px;
+  color: #FFF;
+  background-color: #28a745;
+  border-color:#28a745!important; ;
+  border-radius: 3px;
+  border: 2px solid #28a745; 
+}
+
+.loginbtn {
+  display: inline-block;
+  padding: 4px 8px;
+  color: #FFF;
+  background-color: #007bff;
+  border-color:#007bff!important; ;
+  border-radius: 3px;
+  border: 2px solid #007bff; 
+}
+
+.updatebtn {
+  display: inline-block;
+  padding: 4px 8px;
+  color: #FFF;
+  background-color: #6c757d;
+  border-color:#6c757d!important; ;
+  border-radius: 3px;
+  border: 2px solid #6c757d;
 }

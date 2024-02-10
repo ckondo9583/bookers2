@@ -1,3 +1,4 @@
+
 <!--フラッシュ-->
 <div>
   <%= flash[:notice] %>
@@ -12,31 +13,44 @@
   </ul>
 <% end %>
 
-<!--Bootstrap-->
-<div class="container"> 
-  <div class="row"> 
+
   
 <!--共通部分-->
 <%= render 'info', book: @new_book %>
 
+
 <!-- 投稿したBOOKS -->
-<div class="col-md-1" style="background-color: pink;">
+<div class="col-md-1">
 </div>
-<div class="col-md-8" style="background-color: orange;">
-  
-<h1>Books</h1>
+<div class="col-md-8">  
+<h2>Book detail</h2>
 
-<div>
-  <%= image_tag @book.user.get_profile_image(100,100) %>
-  <%= @book.user.name %>
-  <%= @book.title %>
-  <%= @book.body %>
-</div>
 
-<% if @book.user == current_user %>
-<%= link_to "編集", edit_book_path(@book.id) %>
-<%= link_to "削除", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-<% end %>
+<table class="table">
+  <tbody>
+    <tr>
+        <td>
+           <%= image_tag @book.user.get_profile_image(100,100) %><br>
+           <a href="<%=user_path(@book.user.id) %>"><%= @book.user.name %></a>
+        </td>
+        <td>
+           <a href="<%= book_path(@book) %>"%><%= @book.title %></a>
+        </td>
+        <td>
+           <%= @book.body %>
+        </td>
+        
+    <% if @book.user == current_user %>
+        <td>
+        <%= link_to "Edit", edit_book_path(@book.id) ,class:'editbtn'%>
+        </td>
+        <td>
+        <%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？",class:'destroybtn' %>
+        </td>
+    <% end %>
+</table>
+
+
 </div>
 
   </div> 

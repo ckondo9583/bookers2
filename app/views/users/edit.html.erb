@@ -1,13 +1,30 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<main>
+  <p id="notice"></p>
+  <div class="container">
+  <div class="row">
+    <div class="mx-auto col-11 col-sm-10 col-lg8 col-xl-6">
+
 <!-- ユーザーの詳細 -->
-<h2>プロフィール編集</h2>
+<h2>User info</h2>
+
+
 <%= form_with model: @user do |f| %>
+  <div class="formgroup">
   <label for="inputName">Name</label><br>
-  <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%><br>
+  <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前",class:'text_field'%><br>
+  </div>
+  
+  <div class="formgroup">
   <label for="inputImage">Image</label><br>
   <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %> <br>
+  </div>
+  
+  <div class="formgroup">
   <label for="inputIntroduction">Introduction</label><br>
-  <%= f.text_field :introduction, autofocus: true, id:"inputIntroduction", placeholder:"Introduction"%>
-  <%= f.submit "変更を保存" %>
+  <%= f.text_area :introduction, autofocus: true, id:"inputIntroduction", placeholder:"Introduction",class:'text_area'%>
+  </div>
+  
+  <div class="formgroup">
+  <%= f.submit "Update User",class:'updatebtn' %>
+  </div>
 <% end %>
