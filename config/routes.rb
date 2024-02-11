@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
 
 
-  root to: "homes#top"
+  root to: "home#top"
 
    authenticated :user do
    root 'users#show', as: :user_root
@@ -15,8 +15,8 @@ Rails.application.routes.draw do
 end
   resources :books, only: [:new, :index, :show, :create, :edit, :update, :destroy]
   resources :users, only: [:show, :edit, :index, :update]
-  get 'homes/about' , as: :about
-  get '/' =>'homes#top'
+  get 'home/about' , as: :about
+  get '/' =>'home#top'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 

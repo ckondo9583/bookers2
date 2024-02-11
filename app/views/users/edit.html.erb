@@ -1,6 +1,15 @@
+<!--バリデーション-->
+<% if @user.errors.any? %>
+  <%= @user.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <main>
-  <p id="notice"></p>
-  <div class="container">
+  <p id="notice"><%= notice %></p>
   <div class="row">
     <div class="mx-auto col-11 col-sm-10 col-lg8 col-xl-6">
 

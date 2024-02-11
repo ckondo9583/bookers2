@@ -6,7 +6,6 @@ class BooksController < ApplicationController
   def create
     @books = Book.all
     @user = current_user
-    # @book = @user.books.new(book_params)
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     if @book.save
@@ -31,12 +30,17 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])
-    @book.update(book_params)
+    if @book.update(book_params)
+    flash[:notice] = "successfully."
     redirect_to book_path(@book)
+    else
+      render :edit
+    end
   end
 
   def edit
     @book = Book.find(params[:id])
+    redirect_to books_path unless @book.user == current_user
   end
 
   def destroy
@@ -55,5 +59,5 @@ class BooksController < ApplicationController
     params.require(:user).permit(:name, :profile_image,:email)
   end
 
-end
+  end
 
